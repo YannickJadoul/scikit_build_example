@@ -30,10 +30,10 @@ def patched_WindowsPlatform_init(self):
 	supported_vs_years = [("2019", "v141"), ("2017", "v141")]
 	for vs_year, vs_toolset in supported_vs_years:
 		self.default_generators.extend([
-			# CMakeVisualStudioCommandLineGenerator("Ninja", vs_year, vs_toolset),
+			CMakeVisualStudioCommandLineGenerator("Ninja", vs_year, vs_toolset),
 			CMakeVisualStudioIDEGenerator(vs_year, vs_toolset),
-			# CMakeVisualStudioCommandLineGenerator("NMake Makefiles", vs_year, vs_toolset),
-			# CMakeVisualStudioCommandLineGenerator("NMake Makefiles JOM", vs_year, vs_toolset)
+			CMakeVisualStudioCommandLineGenerator("NMake Makefiles", vs_year, vs_toolset),
+			CMakeVisualStudioCommandLineGenerator("NMake Makefiles JOM", vs_year, vs_toolset)
 		])
 
 import skbuild.platform_specifics.windows

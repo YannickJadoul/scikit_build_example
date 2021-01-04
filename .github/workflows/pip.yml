@@ -6,7 +6,7 @@ on:
   push:
     branches:
       - master
-      - test
+      - test*
 
 jobs:
   make_dist:
@@ -37,7 +37,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [windows-latest, macos-latest, ubuntu-latest]
+        platform: [windows-2016, macos-latest, ubuntu-latest]
         python-version: ["2.7", "3.5", "3.8"]
 
     runs-on: ${{ matrix.platform }}
